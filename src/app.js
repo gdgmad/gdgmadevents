@@ -2,7 +2,7 @@ import React from 'react'
 import { Router } from '@reach/router'
 import { Login, Home, NotFound } from './component'
 import firebase from './firebase'
-import AuthorizedRoute from './component/authroute'
+import {AuthorizedRoute} from './component'
 
 const App = () => {
     return (

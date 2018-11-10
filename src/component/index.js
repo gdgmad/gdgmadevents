@@ -1,6 +1,8 @@
 import React from 'react'
 import firebase from '../firebase'
 
+export * from './authroute'
+
 export const Login = (props) => {
     return <div onClick={() => {
         firebase.anonymous().then(user => {

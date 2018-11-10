@@ -2,7 +2,7 @@ import * as firebase from 'firebase'
 import React, { Component } from 'react'
 import { Redirect } from '@reach/router'
 
-export default class AuthorizedRoute extends Component {
+export class AuthorizedRoute extends Component {
     constructor(props) {
         super(props);
         this.state = {

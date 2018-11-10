@@ -12,19 +12,19 @@ const config = {
 class Firebase {
 
     constructor() {
-        firebase.initializeApp(config)
+        this.auth = firebase.initializeApp(config).auth()
     }
 
     login = (username, password) => {
-        return firebase.auth().loginWithUsenameAndPassword(username, password)
+        return this.auth.loginWithUsenameAndPassword(username, password)
     }
 
     anonymous = () => {
-        return firebase.auth().signInAnonymously()
+        return this.auth.signInAnonymously()
     }
 
     signOut = () => {
-        return firebase.auth().signOut()
+        return this.auth.signOut()
     }
 }
 const instance = new Firebase()
