@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, FormGroup } from '@auth0/cosmos'
+import { Form } from '@auth0/cosmos'
 
 const styles = {
     container: {
@@ -26,7 +26,6 @@ export class Login extends React.Component {
 
     render() {
         return <div style={styles.container}>
-            <FormGroup>
                 <Form layout="label-on-left">
                     <Form.TextInput
                         label="Email"
@@ -38,7 +37,6 @@ export class Login extends React.Component {
                         placeholder="Enter password" />
                     <Form.Actions primaryAction={{ label: 'Login', handler: this.handleSubmit }} />
                 </Form>
-            </FormGroup>
         </div>
     }
 }
