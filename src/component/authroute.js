@@ -25,13 +25,8 @@ export class AuthorizedRoute extends Component {
     }
 
     render() {
-        //const { component: Component, ...rest } = this.props
         const { children } = this.props
-        {
-            if (this.state.pending) return null
-
-            //return this.state.loggedIn ? <Component {...rest} /> : <Redirect noThrow to='/' />
-            return this.state.loggedIn ? <React.Fragment>{children}</React.Fragment> : <Redirect noThrow to='/' />
-        }
+        if (this.state.pending) return null
+        return this.state.loggedIn ? <React.Fragment>{children}</React.Fragment> : <Redirect noThrow to='/' />
     }
 }
