@@ -16,7 +16,7 @@ class Firebase {
     }
 
     login = (username, password) => {
-        return this.auth.loginWithUsenameAndPassword(username, password)
+        return this.auth.signInWithEmailAndPassword(username, password)
     }
 
     anonymous = () => {
