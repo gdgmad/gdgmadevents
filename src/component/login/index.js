@@ -35,7 +35,8 @@ export class Login extends React.Component {
             this.props.navigate('/admin')
         }).catch(err => {
             this.setState({
-                error: err.message
+                error: err.message,
+                loading: false,
             })
         })
     }
