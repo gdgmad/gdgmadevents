@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@auth0/cosmos": "^0.2.2",
+    "@auth0/cosmos": "^0.7.2",
     "@reach/router": "^1.0.5",
     "firebase": "^5.0.4",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "^2.1.1"
   },
   "scripts": {
     "lint": "eslint ./src --fix",
@@ -21,10 +21,10 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.6",
-    "@storybook/addon-links": "^3.4.6",
-    "@storybook/addons": "^3.4.6",
-    "@storybook/react": "^3.4.6",
+    "@storybook/addon-actions": "^4.0.4",
+    "@storybook/addon-links": "^4.0.4",
+    "@storybook/addons": "^4.0.4",
+    "@storybook/react": "^4.0.4",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "eslint": "^5.4.0",
@@ -43,5 +43,11 @@
   "bugs": {
     "url": "https://github.com/AniketSK/gdgmadevents/issues"
   },
-  "homepage": "https://github.com/AniketSK/gdgmadevents#readme"
+  "homepage": "https://github.com/AniketSK/gdgmadevents#readme",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
