@@ -1,17 +1,18 @@
 service cloud.firestore {
   match /databases/{database}/documents {
   match /venues/{document=**} {
-  	allow read;
-    allow write: if request.auth != null && isUidInAdminUids(request.auth.uid)
+  	allow write: if request.auth != null && isUidInAdminUids(database, request.auth.uid)
+  	allow read
+
   }
-    match /{document=**} {
+
+  match /{document=**} {
       allow read, write: if false;
     }
   }
   
-  function isUidInAdminUids(givenUid) {
-  // anikadamg@gmail.com B90shO9nKDajEojQBgSuwoPXwVD3
-  // admin@testmail.com c0PyO0jDX7NudxREpkCXMnK8Isp2
-    return ["B90shO9nKDajEojQBgSuwoPXwVD3", "c0PyO0jDX7NudxREpkCXMnK8Isp2"].hasAny([givenUid])
+  // Checks if the authenticated user's uid is present in the admins table.
+  function isUidInAdminUids(database, givenUid) {
+    return exists(/databases/$(database)/documents/admins/$(givenUid))
   }
 }
