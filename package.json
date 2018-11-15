@@ -6,10 +6,14 @@
   "dependencies": {
     "@auth0/cosmos": "^0.7.2",
     "@reach/router": "^1.0.5",
+    "@wojtekmaj/react-timerange-picker": "^2.0.0",
     "firebase": "^5.0.4",
+    "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "react": "^16.4.0",
+    "react-datetime": "^2.16.2",
     "react-dom": "^16.4.0",
+    "react-kronos": "^1.7.1",
     "react-scripts": "^2.1.1"
   },
   "scripts": {

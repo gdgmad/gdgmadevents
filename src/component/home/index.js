@@ -1,31 +1,47 @@
 import React from 'react'
-import { Tabs } from '@auth0/cosmos'
-import { CreateEvent } from '../create-event'
+import { CreateEvent } from '../event'
+import { FormGroup, Button } from '@auth0/cosmos'
+import { AddVenue } from '../venue'
+import { Agenda } from '../agenda'
+import _ from 'lodash'
 
 const styles = {
     container: {
-        padding: '2em',
-        height: '100vh'
+        padding: '1em',
+        //height: '100vh',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'column',
+        alignContent: 'center',
+        alignItems: 'center',
     }
 }
 
 export class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { selected: 0 }
-    }
 
-    handleSelected(selected) {
-        this.setState({ selected })
+    state = {}
+
+    updateState = (key, e) => {
+        const { target: { name, value } } = e
+        let result = this.state
+        const member = key ? `${key}.${name}` : `${name}`
+        result = _.set(result, member, value)
+
+        this.setState(result, () => {
+            console.log(JSON.stringify(this.state))
+        })
     }
 
     render() {
         return (
             <div style={styles.container}>
-                <Tabs onSelect={nextIndex => this.handleSelected(nextIndex)} selected={this.state.selected}>
-                    <Tabs.Tab label="Create Event"><CreateEvent/></Tabs.Tab>
-                    <Tabs.Tab label="Add Speaker">You can render anything you want here</Tabs.Tab>
-                </Tabs>
+
+                <FormGroup>
+                    <Agenda updateState={this.updateState} />
+                    <AddVenue updateState={this.updateState} />
+                    <CreateEvent updateState={this.updateState} />
+                </FormGroup>
+                <Button>Create Event</Button>
             </div>
         )
     }
