@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from '@auth0/cosmos'
 import { AddSpeaker } from '../speaker'
-import TimePicker from '../time-picker'
+import { TimePicker } from '../picker'
 import './agenda.css'
 
 const styles = {
@@ -19,11 +19,13 @@ export class Session extends React.Component {
         slot: ''
     }
 
+    agendaKey = `agenda.${this.props.agenda}`
+
     handleInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
-        this.props.updateState(`${this.props.agenda}`, e)
+        this.props.updateState(this.agendaKey, e)
     }
 
     onChange = (time, key) => {
@@ -32,13 +34,13 @@ export class Session extends React.Component {
         this.setState({
             slot
         })
-        this.props.updateState(`${this.props.agenda}`, e)
+        this.props.updateState(this.agendaKey, e)
     }
 
     render() {
         return (
             <div style={styles.container}>
-                <Form layout="label-on-top" style={{marginTop: '2em'}}>
+                <Form layout="label-on-top" style={{ marginTop: '2em' }}>
                     <Form.FieldSet label="Add Session">
                         <Form.TextInput
                             label="Talk Title"
@@ -51,7 +53,7 @@ export class Session extends React.Component {
                             <TimePicker onChange={this.onChange} name="start" title="Start" />
                             <TimePicker onChange={this.onChange} name="end" title="End" />
                         </div>
-                        <AddSpeaker agenda={this.props.agenda} updateState={this.props.updateState} />
+                        <AddSpeaker agenda={this.agendaKey} updateState={this.props.updateState} />
                     </Form.FieldSet>
                 </Form>
             </div>

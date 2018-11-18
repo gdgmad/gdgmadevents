@@ -4,6 +4,7 @@ import { FormGroup, Button } from '@auth0/cosmos'
 import { AddVenue } from '../venue'
 import { Agenda } from '../agenda'
 import _ from 'lodash'
+import firebase from '../../firebase'
 
 const styles = {
     container: {
@@ -19,16 +20,36 @@ const styles = {
 
 export class Home extends React.Component {
 
-    state = {}
+    state = {
+        submitStatus: ''
+    }
 
     updateState = (key, e) => {
         const { target: { name, value } } = e
         let result = this.state
         const member = key ? `${key}.${name}` : `${name}`
-        result = _.set(result, member, value)
+        result = _.set(result, `data.${member}`, value)
 
-        this.setState(result, () => {
-            console.log(JSON.stringify(this.state))
+        this.setState(result)
+    }
+
+    createEvent = () => {
+        this.setState({
+            submitStatus: 'loading'
+        })
+
+        firebase.createEvent(this.state.data).then(() => {
+            this.setState({
+                submitStatus: 'success'
+            })
+            setTimeout(() => {
+                this.setState({
+                    submitStatus: ''
+                })
+            }, 2000)
+            console.log('Success')
+        }).catch(err => {
+            alert(`${err}`)
         })
     }
 
@@ -41,7 +62,11 @@ export class Home extends React.Component {
                     <AddVenue updateState={this.updateState} />
                     <CreateEvent updateState={this.updateState} />
                 </FormGroup>
-                <Button>Create Event</Button>
+                <Button 
+                    onClick={this.createEvent}
+                    appearance="primary"
+                    loading={this.state.submitStatus === 'loading'}
+                    success={this.state.submitStatus === 'success'}>Create Event</Button>
             </div>
         )
     }
