@@ -1,25 +1,24 @@
-interface EventTime {
+export interface EventTime {
     start : number,
     end: number,
 }
 
-interface Speaker {
+export interface Speaker {
     name : string,
     twitterId? : string,
     image? : string,
     website?: string,
 }
 
-interface Agenda {
+export interface Agenda {
     description : string,
     timeSlot : EventTime,
     speaker : Speaker,
 }
-interface Venue {
+
+export interface Venue {
     location : string,
     eventTime : EventTime,
     registrationLink : string,
     agenda : Agenda,
 }
-
-export {EventTime, Speaker, Agenda, Venue}
