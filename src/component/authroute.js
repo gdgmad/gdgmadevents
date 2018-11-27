@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import firebase from '../firebase'
 import React, { Component } from 'react'
 import { Redirect } from '@reach/router'
 
@@ -12,7 +12,7 @@ export class AuthorizedRoute extends Component {
     }
 
     componentWillMount() {
-        this.removeListerner = firebase.auth().onAuthStateChanged(user => {
+        this.removeListerner = firebase.auth.onAuthStateChanged(user => {
             this.setState({
                 pending: false,
                 loggedIn: !!user

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
-import { Login, Home, NotFound, AuthorizedRoute } from './component'
+import { Login, Home,  NotFound, AuthorizedRoute } from './component'
 
 const App = () => {
     return (
