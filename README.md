@@ -9,7 +9,7 @@ Starting from a common base, the api url for our meetup:
 2. Reach out to join technology specifc groups, to build what you want from it.
 3. If you have ideas, sound them out in the group, or help with any of the [issues](https://github.com/gdgmad/gdgmadevents/issues)
 4. Suggest your own ideas and talk about them!
-5. Currently we have iOS, react-native, native android, flutter, google assistant and more groups!
+5. Currently we have iOS, react, firebase, react-native, native android, flutter, google assistant and more groups!
 
 Here's the link to the api url https://us-central1-gdgmadevents.cloudfunctions.net/event/
 Here's what the sample output looks like: If you want to get started on your own, scroll down to see how!
