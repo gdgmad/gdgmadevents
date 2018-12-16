@@ -21,9 +21,10 @@ const instructions = Platform.select({
 interface Props {}
 export default class App extends Component<Props> {
   render() {
+    const emoji = '🎉'
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.welcome}>Welcome to GDG MAD! {emoji}</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
