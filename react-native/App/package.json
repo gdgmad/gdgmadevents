@@ -21,8 +21,5 @@
     "metro-react-native-babel-preset": "0.48.5",
     "react-test-renderer": "16.6.3",
     "typescript": "3.2.2"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
