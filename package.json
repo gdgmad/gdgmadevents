@@ -18,7 +18,7 @@
     "firebase": "^5.5.9",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.3"
   },
   "scripts": {
     "auth0workaround": "del-cli node_modules/@auth0/cosmos/meta/index.d.ts",
