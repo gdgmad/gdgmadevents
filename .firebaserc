@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "gdgmadevents"
+    "default": "gdgmadevents",
+    "dev": "gdgmadevents-dev"
   }
 }
