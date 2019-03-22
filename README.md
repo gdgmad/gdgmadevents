@@ -57,3 +57,17 @@ If you've come here for the workshop Let's Build, follow these steps:
     iOS
 4. You will find the url to call for the data in the README file within that folder.
 5. Build what you want!
+
+# Environment config
+The project nows points to two different firebase projects namely default and dev.
+The default is the prod firebase project and dev is the one, most of the developers would be working on. Just like develop and master branches for your code.
+
+To chose and deploy any of the firebase features like hosting, functions, database rules etc. use the following command:
+```
+ firebase use dev
+ firebase deploy --only functions, hosting
+ ```
+ In order to be added to dev firebase project please contact @AniketSK, @karntrehan or @nikhil-thakkar.
+
+
+
