@@ -23,7 +23,9 @@
   "scripts": {
     "auth0workaround": "del-cli node_modules/@auth0/cosmos/meta/index.d.ts",
     "lint": "eslint ./src --fix",
+    "prestart": "node fb.init",
     "start": "react-scripts start",
+    "prebuild": "node fb.init",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
@@ -45,6 +47,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "firebase-tools": "^6.5.0",
     "npm-run-all": "^4.1.3",
     "ts-jest": "^23.10.4",
     "ts-loader": "^5.3.0",

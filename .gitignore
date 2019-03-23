@@ -65,3 +65,6 @@ node_modules/
 .env
 
 build/
+
+# ignore the generated firebase config file
+/src/firebase/config.json

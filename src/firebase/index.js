@@ -3,8 +3,8 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 import moment from 'moment'
-import config from './firebaseConfig'
 
+const config =  require('./config')
 class Firebase {
 
     constructor() {
